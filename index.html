@@ -288,7 +288,52 @@ body, * {
     padding-right: 15px;
   }
 }
+                   /* ===== FIX NAVBAR MOBILE TANPA UBAH HTML ===== */
+@media (max-width: 991.98px) {
 
+  /* container navbar */
+  .navbar-custom .container {
+    display: flex;
+    align-items: center;
+  }
+
+  /* brand */
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    line-height: 1.2;
+    max-width: calc(100% - 50px); /* sisakan ruang hamburger */
+  }
+
+  .navbar-brand img {
+    height: 38px;
+    margin-right: 8px;
+    flex-shrink: 0;
+  }
+
+  .navbar-brand {
+    font-size: 14px;
+    white-space: normal; /* boleh turun baris kalau sempit */
+  }
+
+  /* tombol hamburger */
+  .navbar-toggler {
+    margin-left: auto;
+    padding: 4px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+/* ===== BRAND TEXT NAVBAR MOBILE ===== */
+@media (max-width: 991.98px) {
+  .navbar-brand {
+    font-size: 14px;      /* perkecil sedikit */
+    font-weight: 700;     /* bold */
+    line-height: 1.2;     /* biar rapi kalau turun baris */
+  }
+}
     /* HERO SLIDER */
     .hero {
       height: 100vh;
@@ -305,6 +350,26 @@ body, * {
     .hero-content {
   position: relative;
   z-index: 2;
+}
+                   /* ===== HERO TITLE RESPONSIVE ===== */
+@media (max-width: 991.98px) {
+  .hero-content h1 {
+    font-size: 32px;   /* lebih kecil di HP */
+    line-height: 1.2;
+  }
+}
+
+/* HP kecil (opsional, lebih aman) */
+@media (max-width: 575.98px) {
+  .hero-content h1 {
+    font-size: 28px;
+  }
+}
+@media (max-width: 991.98px) {
+  .hero .hero-content p {
+    font-weight: normal !important;
+    font-style: normal !important;
+  }
 }
     /* OVERLAY GELAP */
 .hero::before {
@@ -975,6 +1040,7 @@ body, * {
 </div>
 </div>
 </footer>
+
 
 
 
