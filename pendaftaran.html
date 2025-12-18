@@ -272,7 +272,52 @@ body, * {
   color: #f0ac00 !important;
   font-weight: 700;
 }
+/* ===== FIX NAVBAR MOBILE TANPA UBAH HTML ===== */
+@media (max-width: 991.98px) {
 
+  /* container navbar */
+  .navbar-custom .container {
+    display: flex;
+    align-items: center;
+  }
+
+  /* brand */
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    line-height: 1.2;
+    max-width: calc(100% - 50px); /* sisakan ruang hamburger */
+  }
+
+  .navbar-brand img {
+    height: 38px;
+    margin-right: 8px;
+    flex-shrink: 0;
+  }
+
+  .navbar-brand {
+    font-size: 14px;
+    white-space: normal; /* boleh turun baris kalau sempit */
+  }
+
+  /* tombol hamburger */
+  .navbar-toggler {
+    margin-left: auto;
+    padding: 4px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+/* ===== BRAND TEXT NAVBAR MOBILE ===== */
+@media (max-width: 991.98px) {
+  .navbar-brand {
+    font-size: 14px;      /* perkecil sedikit */
+    font-weight: 700;     /* bold */
+    line-height: 1.2;     /* biar rapi kalau turun baris */
+  }
+}
 /* ===== JARAK CARD ALUR PENDAFTARAN (MOBILE ONLY) ===== */
 @media (max-width: 767.98px) {
   .alur-container .row {
@@ -568,5 +613,6 @@ body, * {
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
 
