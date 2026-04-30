@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profil | PP. Ittihadut Tholibin</title>
-<!-- FAVICON & SITE ICON -->
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Profil | PP. Ittihadut Tholibin</title>
+
 <link rel="icon" type="image/png" sizes="32x32" href="Img/favicon-32.png">
-<link rel="icon" type="image/png" sizes="192x192" href="Img/favicon-192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="Img/favicon-512.png">
 <link rel="apple-touch-icon" href="Img/favicon-512.png">
-<!-- GOOGLE SITE LOGO -->
+<meta name="description" content="Profil Pondok Pesantren Ittihadut Tholibin Wonosobo - Sejarah, Visi Misi, Struktur Pengasuh, dan Fasilitas.">
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -19,631 +18,707 @@
   "logo": "https://ponpesittihaduttholibin.com/Img/logoitb.png"
 }
 </script>
-<meta name="description" content="Website resmi Pondok Pesantren Ittihadut Tholibin Wonosobo. Pendidikan Islam terpadu, MTs, dan pendaftaran santri baru.">
 
-  <link href="Style/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <script src="Style/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Amiri:wght@400;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
-  <style>
-    :root {
-      --hijau: #065f46;
-      --emas: #e7b022;
-      --gelap: #0f172a;
-      --abu: #f8fafc;
-    }
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #fff;
-    }
- .custom-cursor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.9);
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
-    transition: transform 0.08s ease-out;
-    mix-blend-mode: difference; /* efek modern */
-}
-/* Glow besar mengikuti cursor */
-.cursor-glow {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background: rgba(0, 188, 255, 0.25); /* biru glow */
-    filter: blur(15px);
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    z-index: 9998;
-    transition: transform 0.15s ease-out;
+:root {
+  --hijau:      #065f46;
+  --hijau-mid:  #0f7a5a;
+  --hijau-tua:  #042e1e;
+  --hijau-muda: #d1fae5;
+  --emas:       #b7882c;
+  --emas-terang:#e7b022;
+  --emas-muda:  #fef3c7;
+  --gelap:      #0c1a14;
+  --bg:         #f7f9f7;
+  --putih:      #ffffff;
+  --teks:       #1a2e24;
+  --teks-muted: #5a7566;
+  --border:     #d4e5db;
 }
 
-  /* Hilangkan cursor default */
-body, * {
-    cursor: none !important;
-}
-    /* ================= NAVBAR ================= */
-    /* NAVBAR */
-    .navbar-custom {
-      padding: 15px 0;
-      transition: 0.3s;
-      background: transparent;
-    }
-    /* NOTE: tambahkan !important agar tidak tertimpa aturan lain */
-    .navbar-custom.scrolled {
-      background: #fff !important;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    .navbar-custom.scrolled .navbar-brand {
-      color: #000 !important;
-    }
-    .nav-link { color: #fff !important; font-weight: 500; margin-left: 20px; }
-    .navbar-custom.scrolled .nav-link { color: #000 !important; }
+html { scroll-behavior: smooth; }
 
-
-    /* Hamburger default (PUTIH) */
-.navbar-dark .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--bg);
+  color: var(--teks);
+  line-height: 1.7;
+  font-size: 15px;
+  overflow-x: hidden;
 }
 
-/* Saat navbar scroll (HITAM) */
-.navbar-custom.scrolled .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,0,0,1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+/* ══════════════════════════════
+   NAVBAR
+══════════════════════════════ */
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5vw; height: 68px;
+  background: rgba(255,255,255,0);
+  backdrop-filter: blur(0px);
+  transition: background .35s, backdrop-filter .35s, border-color .35s;
+  border-bottom: 1px solid transparent;
+}
+.navbar.scrolled {
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(14px);
+  border-bottom-color: var(--border);
+}
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.brand img { height: 38px; }
+.brand-text { font-size: 13px; font-weight: 700; color: #fff; line-height: 1.2; max-width: 180px; transition: color .35s; }
+.navbar.scrolled .brand-text { color: var(--hijau); }
+
+.nav-links { display: flex; align-items: center; gap: 4px; }
+.nav-links a {
+  text-decoration: none; color: rgba(255,255,255,.85); font-size: 14px; font-weight: 500;
+  padding: 6px 14px; border-radius: 100px; transition: all .2s; position: relative;
+}
+.navbar.scrolled .nav-links a { color: var(--teks-muted); }
+.nav-links a:hover { color: var(--hijau); background: var(--hijau-muda); }
+.nav-links a.active { color: var(--putih) !important; background: var(--hijau); }
+
+.dropdown { position: relative; }
+.dropdown-menu {
+  display: none; position: absolute; top: calc(100% + 8px); left: 0;
+  background: var(--putih); border: 1px solid var(--border); border-radius: 12px;
+  padding: 6px; min-width: 200px; box-shadow: 0 8px 24px rgba(0,0,0,.1);
+}
+.dropdown:hover .dropdown-menu { display: block; }
+.dropdown-menu a {
+  display: block; padding: 9px 14px; font-size: 13px; color: var(--teks) !important;
+  border-radius: 8px; text-decoration: none; transition: background .15s;
+}
+.dropdown-menu a:hover { background: var(--hijau-muda); color: var(--hijau) !important; }
+
+.nav-toggle { display: none; background: none; border: none; font-size: 22px; color: #fff; cursor: pointer; transition: color .35s; }
+.navbar.scrolled .nav-toggle { color: var(--hijau); }
+
+@media (max-width: 900px) {
+  .nav-links { display: none; flex-direction: column; align-items: stretch;
+    position: absolute; top: 68px; left: 0; right: 0;
+    background: #fff; border-bottom: 1px solid var(--border); padding: 14px 5vw; gap: 2px; }
+  .nav-links.open { display: flex; }
+  .nav-links a { color: var(--teks-muted) !important; }
+  .nav-toggle { display: block; }
+  .dropdown-menu { position: static; box-shadow: none; border: none; background: var(--bg); }
 }
 
-/* ===== HAMBURGER CUSTOM ===== */
-.navbar-toggler {
-  border: none;
-  outline: none;
+/* ══════════════════════════════
+   PAGE HERO
+══════════════════════════════ */
+.page-hero {
+  position: relative; min-height: 62vh;
+  display: flex; align-items: flex-end; justify-content: flex-start;
+  background: linear-gradient(160deg, var(--hijau-tua) 0%, var(--hijau) 55%, #0d7a56 100%);
+  overflow: hidden; padding-bottom: 0;
+}
+.page-hero-bg {
+  position: absolute; inset: 0;
+  background: url('Img/pondok.jpg') center 60%/cover no-repeat;
+  opacity: .2;
+}
+.page-hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(4,46,30,.65) 0%, rgba(6,95,70,.45) 55%, rgba(4,46,30,.92) 100%);
+}
+.page-hero-pattern {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image: radial-gradient(circle, rgba(183,136,44,.18) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
+}
+.page-hero-khat {
+  position: absolute; right: -20px; top: 50%; transform: translateY(-50%);
+  font-family: 'Scheherazade New', serif;
+  font-size: clamp(160px, 24vw, 340px);
+  color: rgba(183,136,44,.07); line-height: 1; pointer-events: none; user-select: none;
+}
+.page-hero-content {
+  position: relative; z-index: 2;
+  padding: 130px 5vw 0;
+  max-width: 1100px; width: 100%; margin: 0 auto;
+}
+.page-hero-eyebrow {
+  display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--emas-terang); background: rgba(183,136,44,.15); border: 1px solid rgba(183,136,44,.35);
+  padding: 4px 16px; border-radius: 100px; margin-bottom: 18px;
+  animation: fadeDown .7s ease both;
+}
+.page-hero h1 {
+  font-family: 'Amiri', serif;
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-weight: 700; color: #fff; line-height: 1.15;
+  text-shadow: 0 4px 24px rgba(0,0,0,.5);
+  animation: fadeDown .7s .1s ease both;
+  margin-bottom: 14px;
+}
+.page-hero-sub {
+  font-size: 15px; color: rgba(255,255,255,.65);
+  animation: fadeDown .7s .2s ease both;
+  margin-bottom: 36px;
+}
+.hero-wave { position: relative; z-index: 2; line-height: 0; display: block; }
+.hero-wave svg { display: block; width: 100%; }
+
+/* Breadcrumb */
+.breadcrumb-bar { background: var(--putih); border-bottom: 1px solid var(--border); padding: 12px 5vw; }
+.breadcrumb-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13px; color: var(--teks-muted);
+}
+.breadcrumb-inner a { color: var(--hijau); text-decoration: none; font-weight: 600; transition: color .2s; }
+.breadcrumb-inner a:hover { color: var(--emas); }
+.breadcrumb-inner i { font-size: 10px; color: var(--border); }
+
+/* ══════════════════════════════
+   SECTION SHARED
+══════════════════════════════ */
+.section-wrap { max-width: 1100px; margin: 0 auto; padding: 80px 5vw; }
+.section-header { text-align: center; margin-bottom: 52px; }
+.section-eyebrow {
+  display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase;
+  color: var(--emas); background: var(--emas-muda); border: 1px solid rgba(183,136,44,.3);
+  padding: 4px 16px; border-radius: 100px; margin-bottom: 14px;
+}
+.section-title {
+  font-family: 'Amiri', serif; font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700;
+  color: var(--hijau); margin-bottom: 10px;
+}
+.section-divider {
+  width: 60px; height: 3px; background: linear-gradient(90deg, var(--emas), var(--emas-terang));
+  border-radius: 10px; margin: 0 auto 16px;
+}
+.section-desc { font-size: 15px; color: var(--teks-muted); max-width: 600px; margin: 0 auto; }
+
+/* ══════════════════════════════
+   PROFIL — 2 col layout
+══════════════════════════════ */
+.profil-section { background: var(--putih); }
+.profil-grid {
+  display: grid; grid-template-columns: 1fr 1.15fr; gap: 64px; align-items: start;
+}
+@media (max-width: 820px) { .profil-grid { grid-template-columns: 1fr; gap: 36px; } }
+
+/* Gambar */
+.profil-img-wrap { position: relative; }
+.profil-img-wrap img {
+  width: 100%; border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(6,95,70,.18);
+}
+.profil-img-ornament {
+  position: absolute; bottom: -18px; right: -18px; width: 78%; height: 78%;
+  border-radius: 20px; border: 3px solid var(--emas); opacity: .3; pointer-events: none; z-index: 0;
+}
+.profil-badge {
+  position: absolute; top: 20px; left: 20px; z-index: 2;
+  background: var(--hijau); color: #fff; font-size: 12px; font-weight: 700;
+  padding: 6px 16px; border-radius: 100px; letter-spacing: .07em;
 }
 
-.hamburger {
-  width: 26px;
-  height: 20px;
-  position: relative;
-  display: inline-block;
+/* Stat chips */
+.stat-chips {
+  display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px;
+}
+.stat-chip {
+  flex: 1; min-width: 100px; background: var(--hijau-muda);
+  border-radius: 14px; padding: 14px 16px; border-left: 4px solid var(--hijau);
+  text-align: center;
+}
+.stat-chip .num { font-family: 'Amiri', serif; font-size: 1.4rem; font-weight: 700; color: var(--hijau); line-height: 1.1; }
+.stat-chip .lbl { font-size: 11px; color: var(--teks-muted); margin-top: 3px; font-weight: 600; }
+
+/* Teks profil */
+.profil-text .section-title { text-align: left; }
+.profil-text .section-divider { margin: 0 0 22px; }
+.profil-text p {
+  font-size: 14.5px; color: var(--teks-muted); line-height: 1.85;
+  text-align: justify; margin-bottom: 14px;
+}
+.profil-text p:last-child { margin-bottom: 0; }
+.profil-text strong { color: var(--hijau); font-weight: 700; }
+
+/* ══════════════════════════════
+   TIMELINE (sejarah ringkas)
+══════════════════════════════ */
+.sejarah-section { background: var(--bg); }
+.timeline-wrap { max-width: 860px; margin: 0 auto; }
+.tl-row {
+  display: flex; gap: 28px; align-items: flex-start;
+  background: var(--putih); border: 1px solid var(--border);
+  border-radius: 18px; padding: 22px 26px;
+  margin-bottom: 14px; transition: all .3s; position: relative; overflow: hidden;
+}
+.tl-row::before {
+  content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 4px;
+  background: linear-gradient(to bottom, var(--hijau), var(--emas-terang));
+}
+.tl-row:hover {
+  transform: translateX(6px);
+  box-shadow: 0 8px 28px rgba(6,95,70,.1);
+  border-color: var(--hijau-muda);
+}
+.tl-year-badge {
+  flex-shrink: 0; min-width: 80px; text-align: center;
+  background: linear-gradient(135deg, var(--hijau-muda), #a7f3d0);
+  border-radius: 12px; padding: 10px 12px;
+  font-size: 13px; font-weight: 800; color: var(--hijau); letter-spacing: .04em;
+}
+.tl-body h5 { font-size: 14px; font-weight: 700; color: var(--teks); margin-bottom: 5px; }
+.tl-body p  { font-size: 13.5px; color: var(--teks-muted); line-height: 1.75; text-align: justify; }
+
+/* ══════════════════════════════
+   VISI MISI
+══════════════════════════════ */
+.visimisi-section {
+  background: linear-gradient(135deg, var(--hijau-tua) 0%, var(--hijau) 100%);
+  position: relative; overflow: hidden;
+}
+.visimisi-section::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(183,136,44,.15) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+}
+.visimisi-wrap {
+  max-width: 1100px; margin: 0 auto; padding: 80px 5vw;
+  position: relative; z-index: 1;
+}
+.visimisi-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 48px; align-items: start; }
+@media (max-width: 820px) { .visimisi-grid { grid-template-columns: 1fr; } }
+
+.visi-card {
+  background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15);
+  border-radius: 24px; padding: 36px 32px; backdrop-filter: blur(12px);
+}
+.vm-label {
+  font-size: 11px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase;
+  color: var(--emas-terang); margin-bottom: 14px; display: flex; align-items: center; gap: 8px;
+}
+.vm-label::after { content: ''; flex: 1; height: 1px; background: rgba(183,136,44,.3); }
+.vm-text {
+  font-family: 'Amiri', serif; font-size: 1.35rem; color: #fff; line-height: 1.7;
 }
 
-.hamburger span {
-  position: absolute;
-  height: 3px;
-  width: 100%;
-  background: #fff;
-  border-radius: 3px;
-  left: 0;
-  transition: all 0.35s ease;
+.misi-card {
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
+  border-radius: 24px; padding: 36px 32px; backdrop-filter: blur(8px);
+}
+.misi-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+.misi-list li {
+  display: flex; gap: 14px; align-items: flex-start;
+  font-size: 14px; color: rgba(255,255,255,.8); line-height: 1.7;
+}
+.misi-num {
+  width: 26px; height: 26px; border-radius: 50%;
+  background: rgba(231,176,34,.2); border: 1px solid rgba(231,176,34,.4);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; color: var(--emas-terang); flex-shrink: 0; margin-top: 1px;
 }
 
-/* Posisi garis */
-.hamburger span:nth-child(1) { top: 0; }
-.hamburger span:nth-child(2) { top: 8px; }
-.hamburger span:nth-child(3) { top: 16px; }
-
-/* ===== SAAT AKTIF (MENJADI X) ===== */
-.navbar-toggler[aria-expanded="true"] .hamburger span:nth-child(1) {
-  transform: rotate(45deg);
-  top: 8px;
+/* ══════════════════════════════
+   STRUKTUR PENGASUH
+══════════════════════════════ */
+.pengasuh-section { background: var(--bg); }
+.pengasuh-grid { display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; }
+.pengasuh-card {
+  background: var(--putih); border-radius: 24px; border: 1px solid var(--border);
+  padding: 36px 28px; text-align: center; width: 280px;
+  transition: all .35s; position: relative; overflow: hidden;
+}
+.pengasuh-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, var(--hijau), var(--emas-terang));
+}
+.pengasuh-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(6,95,70,.13); }
+.pengasuh-img-wrap {
+  position: relative; width: 130px; height: 155px; margin: 0 auto 22px;
+}
+.pengasuh-img-wrap img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center top;
+  border-radius: 16px; box-shadow: 0 8px 24px rgba(6,95,70,.2);
+}
+.pengasuh-img-wrap::after {
+  content: ''; position: absolute; bottom: -6px; right: -6px;
+  width: 60%; height: 60%; border-radius: 12px;
+  border: 2px solid var(--emas); opacity: .35; pointer-events: none;
+}
+.pengasuh-role {
+  display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--emas); background: var(--emas-muda); padding: 3px 12px; border-radius: 100px;
+  margin-bottom: 10px;
+}
+.pengasuh-name {
+  font-family: 'Amiri', serif; font-size: 1.05rem; font-weight: 700;
+  color: var(--teks); line-height: 1.4;
 }
 
-.navbar-toggler[aria-expanded="true"] .hamburger span:nth-child(2) {
-  opacity: 0;
+/* ══════════════════════════════
+   FASILITAS
+══════════════════════════════ */
+.fasilitas-section { background: var(--putih); }
+.fasilitas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+@media (max-width: 820px) { .fasilitas-grid { grid-template-columns: 1fr; } }
+
+.fasilitas-card {
+  background: var(--bg); border-radius: 20px; border: 1px solid var(--border);
+  padding: 32px 26px; text-align: center; transition: all .3s; position: relative; overflow: hidden;
 }
-
-.navbar-toggler[aria-expanded="true"] .hamburger span:nth-child(3) {
-  transform: rotate(-45deg);
-  top: 8px;
+.fasilitas-card::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--hijau), var(--emas-terang));
+  transform: scaleX(0); transition: transform .3s; transform-origin: left;
 }
-
-/* ===== SAAT SCROLL (HITAM) ===== */
-.navbar-custom.scrolled .hamburger span {
-  background: #000;
+.fasilitas-card:hover::after { transform: scaleX(1); }
+.fasilitas-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(6,95,70,.1); background: var(--putih); }
+.fasilitas-icon {
+  width: 70px; height: 70px; border-radius: 20px;
+  background: linear-gradient(135deg, var(--hijau-muda), #a7f3d0);
+  margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;
+  font-size: 28px; color: var(--hijau); transition: transform .3s;
 }
+.fasilitas-card:hover .fasilitas-icon { transform: scale(1.1) rotate(-4deg); }
+.fasilitas-card h4 { font-size: 16px; font-weight: 700; color: var(--teks); margin-bottom: 10px; }
+.fasilitas-card p { font-size: 13px; color: var(--teks-muted); line-height: 1.75; }
 
-
-
-/* BACKGROUND MENU MOBILE (saat hamburger dibuka) */
-@media (max-width: 991.98px) {
-  .navbar-custom .navbar-collapse {
-    background: #ffffff;
-    padding: 15px 20px;
-    border-radius: 12px;
-    margin-top: 10px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-  }
-
-  /* Warna teks menu mobile */
-  .navbar-custom .nav-link {
-    color: #000 !important;
-    margin: 10px 0;
-    font-weight: 600;
-  }
-
-  /* Dropdown menu ikut rapi */
-  .navbar-custom .dropdown-menu {
-    background: #f8fafc;
-    border: none;
-    box-shadow: none;
-  }
+/* ══════════════════════════════
+   CTA STRIP
+══════════════════════════════ */
+.cta-strip {
+  background: linear-gradient(135deg, var(--hijau-tua) 0%, var(--hijau) 100%);
+  position: relative; overflow: hidden;
 }
-@media (max-width: 991.98px) {
-  .navbar-collapse {
-    animation: fadeDown .35s ease;
-  }
-
-  @keyframes fadeDown {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+.cta-strip::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(183,136,44,.15) 1.5px, transparent 1.5px);
+  background-size: 22px 22px;
 }
-
-/* ===== HOVER & ACTIVE MENU NAVBAR ===== */
-.navbar-custom .nav-link {
-  position: relative;
-  transition: all 0.3s ease;
+.cta-inner {
+  max-width: 1100px; margin: 0 auto; padding: 70px 5vw;
+  text-align: center; position: relative; z-index: 1;
 }
+.cta-inner h2 { font-family: 'Amiri', serif; font-size: 2.2rem; color: #fff; margin-bottom: 10px; }
+.cta-inner p { color: rgba(255,255,255,.65); font-size: 15px; margin-bottom: 30px; }
+.cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
-/* Hover efek (desktop & mobile) */
-.navbar-custom .nav-link:hover {
-  color: #e7b022 !important; /* emas */
+.btn-emas {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--emas-terang); color: #0c1a14; font-weight: 700; font-size: 14px;
+  padding: 13px 28px; border-radius: 100px; text-decoration: none;
+  transition: all .25s; border: none; cursor: pointer;
 }
-
-/* Garis bawah animasi */
-.navbar-custom .nav-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0;
-  height: 2px;
-  background: #e7b022;
-  transition: width 0.3s ease;
+.btn-emas:hover { background: #f0c240; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(231,176,34,.4); }
+.btn-outline {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent; color: #fff; font-weight: 600; font-size: 14px;
+  padding: 13px 28px; border-radius: 100px; text-decoration: none;
+  border: 1.5px solid rgba(255,255,255,.4); transition: all .25s;
 }
+.btn-outline:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.7); }
 
-/* ===== UNDERLINE NAVBAR (AMAN) ===== */
-.navbar-custom .nav-link::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0;
-  height: 2px;
-  background: #e7b022;
-  transition: width 0.3s ease;
+/* ══════════════════════════════
+   FOOTER
+══════════════════════════════ */
+footer {
+  background: var(--gelap); color: rgba(255,255,255,.55);
+  padding: 64px 5vw 32px;
 }
-
-.navbar-custom .nav-link:hover::before {
-  width: 100%;
+.footer-grid {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 48px; margin-bottom: 48px;
 }
-/* ===== UNDERLINE NAVBAR (AMAN) ===== */
-.navbar-custom .nav-link::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0;
-  height: 2px;
-  background: #e7b022;
-  transition: width 0.3s ease;
-}
+@media (max-width: 820px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
 
-.navbar-custom .nav-link:hover::before {
-  width: 100%;
-}
-/* ===== PANAH DROPDOWN FIX ===== */
-.navbar-custom .dropdown-toggle::after {
-  display: inline-block;
-  margin-left: 6px;
-  vertical-align: middle;
-  position: relative;
-  top: -1px;
-}
+.footer-brand-name { font-family: 'Amiri', serif; font-size: 22px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.footer-arab { font-family: 'Scheherazade New', serif; font-size: 1.1rem; color: var(--emas); margin-bottom: 12px; }
+footer p { font-size: 14px; line-height: 1.9; }
+footer h5 { font-size: 13px; font-weight: 700; color: #fff; letter-spacing: .07em; text-transform: uppercase; margin-bottom: 18px; }
+footer a { font-size: 14px; color: rgba(255,255,255,.5); text-decoration: none; display: block; margin-bottom: 8px; transition: color .2s; }
+footer a:hover { color: var(--emas-terang); }
+footer a i { margin-right: 8px; }
+.footer-divider { border: none; border-top: 1px solid rgba(255,255,255,.08); max-width: 1100px; margin: 0 auto 24px; }
+.footer-copy { text-align: center; font-size: 13px; color: rgba(255,255,255,.25); max-width: 1100px; margin: 0 auto; }
 
+/* ══════════════════════════════
+   ANIMATIONS
+══════════════════════════════ */
+.fade-up { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
+.fade-up.visible { opacity: 1; transform: none; }
+.fade-up:nth-child(2) { transition-delay: .1s; }
+.fade-up:nth-child(3) { transition-delay: .2s; }
+.fade-up:nth-child(4) { transition-delay: .3s; }
 
-/* ===== MOBILE MODE ===== */
-@media (max-width: 991.98px) {
-  .navbar-custom .nav-link {
-    padding: 10px 12px;
-    border-radius: 8px;
-  }
-
-  /* Hover mobile background */
-  .navbar-custom .nav-link:hover {
-     background: rgba(210, 232, 12, 0.1);
-    color: #096631 !important;
-  }
-
-  .navbar-custom .nav-link::after {
-    display: none; /* garis bawah tidak perlu di mobile */
-  }
-}
-
-/* ===== MENU AKTIF (halaman sedang dibuka) ===== */
-.navbar-custom .nav-link.active {
-  color: #f0ac00 !important;
-  font-weight: 700;
-}
-
-/* ===== JARAK LOGO NAVBAR DI MOBILE ===== */
-@media (max-width: 991.98px) {
-  .navbar-custom .container {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-}
-/* ===== FIX NAVBAR MOBILE TANPA UBAH HTML ===== */
-@media (max-width: 991.98px) {
-
-  /* container navbar */
-  .navbar-custom .container {
-    display: flex;
-    align-items: center;
-  }
-
-  /* brand */
-  .navbar-brand {
-    display: flex;
-    align-items: center;
-    line-height: 1.2;
-    max-width: calc(100% - 50px); /* sisakan ruang hamburger */
-  }
-
-  .navbar-brand img {
-    height: 38px;
-    margin-right: 8px;
-    flex-shrink: 0;
-  }
-
-  .navbar-brand {
-    font-size: 14px;
-    white-space: normal; /* boleh turun baris kalau sempit */
-  }
-
-  /* tombol hamburger */
-  .navbar-toggler {
-    margin-left: auto;
-    padding: 4px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
-/* ===== BRAND TEXT NAVBAR MOBILE ===== */
-@media (max-width: 991.98px) {
-  .navbar-brand {
-    font-size: 14px;      /* perkecil sedikit */
-    font-weight: 700;     /* bold */
-    line-height: 1.2;     /* biar rapi kalau turun baris */
-  }
-}
-    /* ================= HEADER ================= */
-.header-banner {
-  height: 60vh;
-  margin-top: -90px;
-  background: url("Img/pondok.jpg") center 60% / cover no-repeat;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  z-index: 1;
-}
-
-
-.header-banner::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.45);
-}
-
-.header-banner h1 {
-  position: relative;
-  z-index: 2;
-  font-size: 3rem;
-  font-weight: 700;
-}
-/* Geser judul banner di HP */
-@media (max-width: 767.98px) {
-  .header-banner h1 {
-    padding-left: 20px;
-    padding-right: 20px;
-    text-align: center; /* opsional, bisa dihapus jika mau tetap kiri */
-  }
-}
-
-    /* ================= CONTENT ================= */
-    h2.section-title {
-      font-weight: 700;
-      color: var(--hijau);
-    }
-
-    .line {
-      width: 80px;
-      height: 4px;
-      background: var(--emas);
-      margin: 10px 0 25px;
-      border-radius: 10px;
-    }
-
-    .profil-card {
-      padding: 25px;
-      border-radius: 12px;
-      background: #fff;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
-
-    .profil-card img {
-      width: 150px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 12px;
-      object-position: center 20px;
-    }
-/* JARAK CARD DI MODE HP */
-@media (max-width: 767.98px) {
-  .profil-card {
-    margin-bottom: 20px;
-  }
-}
-
-    /* ================= FOOTER ================= */
-    footer {
-      background-color: #001f3f;
-      color: white;
-    }
-    .col-md-4.mb-4 a {
-  color: white !important;
-}
-
-  </style>
+@keyframes fadeDown { from{opacity:0;transform:translateY(-20px)} to{opacity:1;transform:none} }
+</style>
 </head>
-<div class="custom-cursor" id="cursor"></div>
-<div class="cursor-glow" id="cursorGlow"></div>
 <body>
 
-<!-- ================= NAVBAR ================= -->
-<nav class="navbar navbar-expand-lg fixed-top navbar-custom navbar-dark">
-  <div class="container">
-    <a class="navbar-brand d-flex align-items-center text-white fw-bold" href="#">
-      <img src="Img/logoitb.png" alt="Logo" style="height:40px; margin-right:10px;">
-      PONPES ITTIHADUT THOLIBIN
-    </a>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBar">
-  <span class="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </span>
-</button>
-
-
-    <div class="collapse navbar-collapse" id="navBar">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">Home</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link active" href="profil.html">Profil</a>
-        </li>
-
-        <!-- DROPDOWN PENDAFTARAN -->
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Pendaftaran
-          </a>
-          <ul class="dropdown-menu">
-            <li>
-              <a class="dropdown-item" href="pendaftaran.html">
-                Pendaftaran Pondok
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="https://mtsalhikmahwsb.com/psb.html">
-                Pendaftaran MTS
-              </a>
-            </li>
-          </ul>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="seputar.html">Seputar MTS</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="galeri.html">Galeri</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="hubungi.html">Hubungi</a>
-        </li>
-      </ul>
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <a class="brand" href="index.html">
+    <img src="Img/logoitb.png" alt="Logo ITB">
+    <span class="brand-text">PP. Ittihadut Tholibin</span>
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="profil.html" class="active">Profil</a>
+    <div class="dropdown">
+      <a href="#" style="display:flex;align-items:center;gap:5px;">
+        Pendaftaran <i class="bi bi-chevron-down" style="font-size:11px;"></i>
+      </a>
+      <div class="dropdown-menu">
+        <a href="pendaftaran.html">Pendaftaran Pondok</a>
+        <a href="https://mtsalhikmahwsb.com/psb.html">Pendaftaran MTS</a>
+      </div>
     </div>
+    <a href="kegiatan.html">Kegiatan</a>
+    <a href="seputar.html">Seputar MTS</a>
+    <a href="galeri.html">Galeri</a>
+    <a href="hubungi.html">Hubungi</a>
   </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><i class="bi bi-list"></i></button>
 </nav>
 
-<div style="height:90px;"></div>
+<!-- ══════ PAGE HERO ══════ -->
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-pattern"></div>
+  <div class="page-hero-khat">إتحاد</div>
 
-<!-- ================= HEADER BANNER ================= -->
-<section class="header-banner">
-  <h1>Profil PonPes Ittihadut Tholibin</h1>
+  <div class="page-hero-content">
+    <div class="page-hero-eyebrow">PP. Ittihadut Tholibin · Wonosobo</div>
+    <h1>Profil<br>Pesantren</h1>
+    <p class="page-hero-sub">Mengenal lebih dalam perjalanan, nilai, dan dedikasi lembaga pendidikan Islam kami</p>
+  </div>
+
+  <div class="hero-wave" style="width:100%;">
+    <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#ffffff"/>
+    </svg>
+  </div>
 </section>
 
-<div class="container py-5">
-
-  <!-- ================= SEJARAH ================= -->
-  <h2 class="section-title">Sejarah Singkat</h2>
-  <div class="line"></div>
-
-  <div class="profil-card mb-5">
-    <p style="text-align: justify;">
-      Pondok Pesantren Ittihadut Tholibin didirikan oleh Dr. KH. Ikhwan Qomary M.Ag 
-      dan Nyai Hj. Umi Fatma S.H., Alhdz pada tahun 1988. Pada awal berdirinya, 
-      pondok ini hanya menjadi tempat mengaji dan belum memiliki bangunan asrama. 
-      Kegiatan mengaji saat itu bergabung dengan Pondok Pesantren Tahfidzul Qur’an Al-Asya’ariyah.
-    </p>
-
-    <p style="text-align: justify;">
-      Pembangunan gedung pertama dimulai tahun 1990 dan terus berkembang hingga 
-      menjadi beberapa gedung asrama putra-putri, ruang pembelajaran, mushola, 
-      dan fasilitas pendidikan lainnya. Hingga kini, PP. Ittihadut Tholibin 
-      terus berkembang menjadi lembaga pendidikan Islam yang kokoh dan maju.
-    </p>
+<!-- Breadcrumb -->
+<div class="breadcrumb-bar">
+  <div class="breadcrumb-inner">
+    <a href="index.html"><i class="bi bi-house-fill"></i> Beranda</a>
+    <i class="bi bi-chevron-right"></i>
+    <span>Profil</span>
   </div>
-
-  <!-- ================= VISI MISI ================= -->
-  <h2 class="section-title">Visi & Misi</h2>
-  <div class="line"></div>
-
-  <div class="profil-card mb-5">
-    <h5 class="fw-bold text-success">Visi</h5>
-    <p>Membentuk generasi Islam yang berakhlak mulia, berilmu, dan berkarakter.</p>
-
-    <h5 class="fw-bold mt-4 text-success">Misi</h5>
-    <ul>
-      <li>Menanamkan nilai-nilai keislaman secara komprehensif.</li>
-      <li>Mengembangkan kemampuan akademik dan non-akademik santri.</li>
-      <li>Mewujudkan lingkungan belajar yang disiplin, nyaman, dan islami.</li>
-      <li>Menguatkan program tahfidz, kitab kuning, dan pendidikan formal.</li>
-    </ul>
-  </div>
-
-  <!-- ================= STRUKTUR ================= -->
-  <h2 class="section-title">Struktur Pengasuh</h2>
-  <div class="line"></div>
-
-  <div class="row g-4 mb-5">
-
-    <div class="col-md-4">
-      <div class="profil-card text-center">
-        <img src="Img/abah.png">
-        <h5 class="fw-bold">Dr. KH. Ikhwan Qomary M.Ag</h5>
-        <p>Pengasuh Pondok</p>
-      </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="profil-card text-center">
-        <img src="Img/Ibu.png">
-        <h5 class="fw-bold">Nyai Hj. Umi Fatma S.H., Alhdz</h5>
-        <p>Pengasuh Pondok</p>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- ================= FASILITAS ================= -->
-  <h2 class="section-title">Fasilitas Pondok</h2>
-  <div class="line"></div>
-
-  <div class="row g-4 mb-5">
-
-    <div class="col-md-4">
-      <div class="profil-card text-center">
-        <i class="bi bi-building fs-1 text-primary"></i>
-        <h5 class="mt-3 fw-bold">Asrama Santri Putra & Putri</h5>
-      </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="profil-card text-center">
-        <i class="bi bi-journal-bookmark fs-1 text-success"></i>
-        <h5 class="mt-3 fw-bold">Ruang Belajar & Madrasah</h5>
-      </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="profil-card text-center">
-        <i class="bi bi-mosque fs-1 text-warning"></i>
-        <h5 class="mt-3 fw-bold">Mushola / Mushola</h5>
-      </div>
-    </div>
-
-  </div>
-
 </div>
 
-<!-- ================= FOOTER ================= -->
-<footer>
-  <div class="container py-4">
-    <div class="row">
+<!-- ══════ PROFIL YAYASAN ══════ -->
+<section class="profil-section">
+  <div class="section-wrap">
+    <div class="profil-grid">
 
-      <div class="col-md-4 mb-4">
-        <h5 class="fw-bold text-light">PP. Ittihadut Tholibin</h5>
-        <p class="text-light">
-          RT.2/RW.5, Kradenan, Kalibeber, Mojotengah,<br>
-          Wonosobo, Jawa Tengah 56351
-        </p>
+      <!-- Gambar -->
+      <div class="fade-up">
+        <div class="profil-img-wrap">
+          <img src="Img/pondok.jpg" alt="Pondok Pesantren Ittihadut Tholibin">
+          <div class="profil-img-ornament"></div>
+          <div class="profil-badge">Est. 1988</div>
+        </div>
+        <div class="stat-chips">
+          <div class="stat-chip">
+            <div class="num"></div>
+            <div class="lbl">Kalibeber</div>
+          </div>
+          <div class="stat-chip">
+            <div class="num"></div>
+            <div class="lbl">Wonosobo</div>
+          </div>
+          <div class="stat-chip">
+            <div class="num"></div>
+            <div class="lbl">Jawa Tengah</div>
+          </div>
+        </div>
       </div>
 
-      <div class="col-md-4 mb-4">
-        <h5 class="fw-bold text-light">Link Cepat</h5>
-        <ul class="list-unstyled">
-          <li><a href="pendaftaran.html" class="text-light">Pendaftaran</a></li>
-            <li><a href="seputar.html" class="text-light">Seputar MTS</a></li>
-            <li><a href="hubungi.html" class="text-light">Hubungi Kami</a></li>
-        </ul>
+      <!-- Teks -->
+      <div class="profil-text fade-up">
+        <div class="section-eyebrow">Profil Lembaga</div>
+        <h2 class="section-title">Yayasan Ittihadut<br>Tholibin</h2>
+        <div class="section-divider"></div>
+
+        <p>Yayasan Ittihadut Tholibin merupakan lembaga yang bergerak di bidang pendidikan Islam dan menjadi payung utama bagi berbagai unit pendidikan yang dikelolanya. Yayasan ini didirikan dengan tujuan untuk mengembangkan pendidikan berbasis keislaman yang terpadu, mencakup pendidikan nonformal maupun formal, serta membentuk generasi yang berakhlak mulia dan berilmu.</p>
+
+        <p>Di bawah naungan Yayasan Ittihadut Tholibin, berdiri <strong>Pondok Pesantren Ittihadut Tholibin</strong> yang didirikan pada tahun 1988 oleh <strong>Dr. KH. Ikhwan Qomary, M.Ag</strong> bersama <strong>Nyai Hj. Umi Fatma, S.H., Alhdz</strong>. Pada awal berdirinya, pondok pesantren ini berfungsi sebagai tempat mengaji yang masih bergabung dengan Pondok Pesantren Tahfidzul Qur'an Al-Asya'ariyah.</p>
+
+        <p>Sebagai bagian dari pengembangan pendidikan formal, Yayasan Ittihadut Tholibin juga mendirikan <strong>MTs Al-Hikmah</strong> — madrasah tingkat menengah pertama yang mengintegrasikan kurikulum pendidikan umum dengan nilai-nilai keislaman, sehingga mampu mencetak peserta didik yang unggul secara akademik sekaligus berakhlak islami.</p>
+
+        <p>Dengan sinergi antara yayasan, pondok pesantren, dan madrasah, Yayasan Ittihadut Tholibin terus berkomitmen menjadi salah satu pilar pendidikan Islam yang berkontribusi bagi masyarakat, khususnya di wilayah Wonosobo.</p>
       </div>
 
-      <div class="col-md-4 mb-4">
-       <h5 class="fw-bold">Media Sosial</h5>
-        <a href="https://wa.me/6282241186388" class="d-block mb-2"><i class="bi bi-whatsapp"></i> WhatsApp</a>
-        <a href="https://www.instagram.com/ponpes_ittihadut_tholibin?igsh=d3llbTBxdzZzdWNm" class="d-block mb-2"><i class="bi bi-instagram"></i> Instagram</a>
-        <a href="mailto:info@ponpesittihaduttholibin.com" class="d-block mb-2"><i class="bi bi-envelope-fill"></i> Email</a>
-        <a href="https://youtube.com/@ittihaduttholibin7931?si=sqPslEjSlKg5Lk9j" class="d-block"><i class="bi bi-youtube"></i> YouTube</a>
-      </div>
-
-    </div>
-
-    <div class="text-center mt-3 pt-3 border-top border-light">
-      <p class="mb-0">© 2025 PP. Ittihadut Tholibin | Tim IT Markas Media</p>
     </div>
   </div>
+</section>
+<!-- ══════ VISI MISI ══════ -->
+<section class="visimisi-section">
+  <div class="visimisi-wrap">
+    <div class="section-header fade-up" style="margin-bottom:48px;">
+      <div class="section-eyebrow" style="color:var(--emas-terang);background:rgba(183,136,44,.15);border-color:rgba(183,136,44,.35);">Arah &amp; Tujuan</div>
+      <h2 class="section-title" style="color:#fff;">Visi &amp; Misi</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="visimisi-grid">
+      <div class="visi-card fade-up">
+        <div class="vm-label"><i class="bi bi-eye-fill"></i> Visi</div>
+        <div class="vm-text">Membentuk generasi Islam yang berakhlak mulia, berilmu luas, dan berkarakter kuat sebagai penerus bangsa dan agama.</div>
+      </div>
+      <div class="misi-card fade-up">
+        <div class="vm-label"><i class="bi bi-compass-fill"></i> Misi</div>
+        <ul class="misi-list">
+          <li><span class="misi-num">1</span><span>Menanamkan nilai-nilai keislaman secara komprehensif dan berkesinambungan.</span></li>
+          <li><span class="misi-num">2</span><span>Mengembangkan kemampuan akademik dan non-akademik santri secara terpadu.</span></li>
+          <li><span class="misi-num">3</span><span>Mewujudkan lingkungan belajar yang disiplin, nyaman, dan islami.</span></li>
+          <li><span class="misi-num">4</span><span>Menguatkan program tahfidz, kitab kuning, dan pendidikan formal MTs.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ STRUKTUR PENGASUH ══════ -->
+<section class="pengasuh-section">
+  <div class="section-wrap">
+    <div class="section-header fade-up">
+      <div class="section-eyebrow">Pimpinan</div>
+      <h2 class="section-title">Struktur Pengasuh</h2>
+      <div class="section-divider"></div>
+      <p class="section-desc">Pondok ini diasuh oleh pasangan ulama yang telah mendedikasikan hidupnya untuk pendidikan Islam sejak 1988</p>
+    </div>
+    <div class="pengasuh-grid">
+      <div class="pengasuh-card fade-up">
+        <div class="pengasuh-img-wrap">
+          <img src="Img/abah.png" alt="Dr. KH. Ikhwan Qomary M.Ag">
+        </div>
+        <div class="pengasuh-role">Pengasuh Pondok</div>
+        <div class="pengasuh-name">Dr. KH. Ikhwan Qomary M.Ag</div>
+      </div>
+      <div class="pengasuh-card fade-up">
+        <div class="pengasuh-img-wrap">
+          <img src="Img/Ibu.png" alt="Nyai Hj. Umi Fatma S.H., Alhdz">
+        </div>
+        <div class="pengasuh-role">Pengasuh Pondok</div>
+        <div class="pengasuh-name">Nyai Hj. Umi Fatma S.H., Alhdz</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ FASILITAS ══════ -->
+<section class="fasilitas-section">
+  <div class="section-wrap">
+    <div class="section-header fade-up">
+      <div class="section-eyebrow">Sarana &amp; Prasarana</div>
+      <h2 class="section-title">Fasilitas Pondok</h2>
+      <div class="section-divider"></div>
+      <p class="section-desc">Fasilitas lengkap disiapkan untuk menunjang kegiatan belajar dan kehidupan santri sehari-hari</p>
+    </div>
+    <div class="fasilitas-grid">
+      <div class="fasilitas-card fade-up">
+        <div class="fasilitas-icon"><i class="bi bi-building-fill"></i></div>
+        <h4>Asrama Santri Putra &amp; Putri</h4>
+        <p>Gedung asrama terpisah yang bersih dan aman, dilengkapi dengan kamar tidur, kamar mandi, dan ruang bersama.</p>
+      </div>
+      <div class="fasilitas-card fade-up">
+        <div class="fasilitas-icon"><i class="bi bi-journal-bookmark-fill"></i></div>
+        <h4>Ruang Belajar &amp; Madrasah</h4>
+        <p>Ruang kelas yang kondusif untuk kegiatan pembelajaran formal maupun pengajian kitab kuning.</p>
+      </div>
+      <div class="fasilitas-card fade-up">
+        <div class="fasilitas-icon"><i class="bi bi-star-fill"></i></div>
+        <h4>Mushola &amp; Aula</h4>
+        <p>Tempat ibadah dan kegiatan bersama yang representatif untuk sholat berjamaah dan acara-acara pesantren.</p>
+      </div>
+      <div class="fasilitas-card fade-up">
+        <div class="fasilitas-icon"><i class="bi bi-book-fill"></i></div>
+        <h4>Perpustakaan</h4>
+        <p>Koleksi kitab-kitab klasik dan buku pendidikan modern untuk menunjang aktivitas belajar santri.</p>
+      </div>
+      <div class="fasilitas-card fade-up">
+        <div class="fasilitas-icon"><i class="bi bi-tree-fill"></i></div>
+        <h4>Area Olahraga</h4>
+        <p>Lapangan dan area olahraga untuk menjaga kesehatan jasmani dan semangat para santri.</p>
+      </div>
+      <div class="fasilitas-card fade-up">
+        <div class="fasilitas-icon"><i class="bi bi-wifi"></i></div>
+        <h4>Fasilitas Pendukung</h4>
+        <p>Dapur, ruang makan, dan fasilitas kesehatan yang tersedia untuk kenyamanan santri mukim.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ CTA ══════ -->
+<section class="cta-strip">
+  <div class="cta-inner fade-up">
+    <h2>Bergabunglah Bersama Kami</h2>
+    <p>Daftarkan putra-putri Anda dan jadikan mereka bagian dari keluarga besar Ittihadut Tholibin</p>
+    <div class="cta-btns">
+      <a href="pendaftaran.html" class="btn-emas"><i class="bi bi-pencil-square"></i> Daftar Pondok</a>
+      <a href="hubungi.html" class="btn-outline"><i class="bi bi-envelope-fill"></i> Hubungi Kami</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ FOOTER ══════ -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-name">PP. Ittihadut Tholibin</div>
+      <div class="footer-arab">إتحاد الطالبين</div>
+      <p>RT.2/RW.5, Kradenan, Kalibeber,<br>Kec. Mojotengah, Kabupaten Wonosobo,<br>Jawa Tengah 56351</p>
+    </div>
+    <div>
+      <h5>Link Cepat</h5>
+      <a href="index.html">Beranda</a>
+      <a href="profil.html">Profil</a>
+      <a href="pendaftaran.html">Pendaftaran</a>
+      <a href="seputar.html">Seputar MTS</a>
+      <a href="galeri.html">Galeri</a>
+      <a href="hubungi.html">Hubungi</a>
+    </div>
+    <div>
+      <h5>Media Sosial</h5>
+      <a href="https://wa.me/6287843563709" target="_blank"><i class="bi bi-whatsapp"></i>WhatsApp</a>
+      <a href="https://www.instagram.com/ponpes_ittihadut_tholibin" target="_blank"><i class="bi bi-instagram"></i>Instagram</a>
+      <a href="https://youtube.com/@ittihaduttholibin7931" target="_blank"><i class="bi bi-youtube"></i>YouTube</a>
+      <a href="mailto:info@ponpesittihaduttholibin.com"><i class="bi bi-envelope-fill"></i>Email</a>
+    </div>
+  </div>
+  <hr class="footer-divider">
+  <p class="footer-copy">© 2025 PP. Ittihadut Tholibin · Tim IT Markas Media</p>
 </footer>
 
+<!-- SCRIPTS -->
 <script>
-  window.addEventListener("scroll", function () {
-    const navbar = document.querySelector(".navbar-custom");
-    if (window.scrollY > 50) navbar.classList.add("scrolled");
-    else navbar.classList.remove("scrolled");
-  });
-    document.addEventListener("mousemove", (e) => {
-    const cursor = document.getElementById("cursor");
-    const glow = document.getElementById("cursorGlow");
-
-    cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-    glow.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 30);
 });
-  const dropdown = document.getElementById("profilDropdown");
-  const arrow = document.getElementById("arrowIcon");
-</script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
+const navToggle = document.getElementById('navToggle');
+const navLinks  = document.getElementById('navLinks');
+navToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+  navToggle.querySelector('i').className =
+    navLinks.classList.contains('open') ? 'bi bi-x-lg' : 'bi bi-list';
+});
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
-
-
-
