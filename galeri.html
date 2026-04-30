@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Galeri | PP. Ittihadut Tholibin</title>
-  <!-- FAVICON & SITE ICON -->
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Galeri | PP. Ittihadut Tholibin</title>
+
 <link rel="icon" type="image/png" sizes="32x32" href="Img/favicon-32.png">
-<link rel="icon" type="image/png" sizes="192x192" href="Img/favicon-192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="Img/favicon-512.png">
 <link rel="apple-touch-icon" href="Img/favicon-512.png">
-<!-- GOOGLE SITE LOGO -->
+<meta name="description" content="Galeri dokumentasi kegiatan PP. Ittihadut Tholibin Wonosobo.">
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -19,676 +18,735 @@
   "logo": "https://ponpesittihaduttholibin.com/Img/logoitb.png"
 }
 </script>
-<meta name="description" content="Website resmi Pondok Pesantren Ittihadut Tholibin Wonosobo. Pendidikan Islam terpadu, MTs, dan pendaftaran santri baru.">
 
-  <link href="Style/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-  <script src="Style/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
-  />
-  <style>
-    body {
-      font-family: "Poppins", sans-serif;
-      background-color: #fff;
-    }
-    .custom-cursor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.9);
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
-    transition: transform 0.08s ease-out;
-    mix-blend-mode: difference; /* efek modern */
-}
-/* Glow besar mengikuti cursor */
-.cursor-glow {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background: rgba(0, 188, 255, 0.25); /* biru glow */
-    filter: blur(15px);
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    z-index: 9998;
-    transition: transform 0.15s ease-out;
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Amiri:wght@400;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --hijau:      #065f46;
+  --hijau-mid:  #0f7a5a;
+  --hijau-tua:  #042e1e;
+  --hijau-muda: #d1fae5;
+  --emas:       #b7882c;
+  --emas-terang:#e7b022;
+  --emas-muda:  #fef3c7;
+  --gelap:      #0c1a14;
+  --bg:         #f7f9f7;
+  --putih:      #ffffff;
+  --teks:       #1a2e24;
+  --teks-muted: #5a7566;
+  --border:     #d4e5db;
 }
 
-  /* Hilangkan cursor default */
-body, * {
-    cursor: none !important;
-}
-   /* NAVBAR */
-    .navbar-custom {
-      padding: 15px 0;
-      transition: 0.3s;
-      background: transparent;
-    }
-    /* NOTE: tambahkan !important agar tidak tertimpa aturan lain */
-    .navbar-custom.scrolled {
-      background: #ffffff !important;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    .navbar-custom.scrolled .navbar-brand {
-      color: #000000 !important;
-    }
-    .nav-link { color: #ffffff !important; font-weight: 500; margin-left: 20px; }
-    .navbar-custom.scrolled .nav-link { color: #000000 !important; }
-
-
-    /* Hamburger default (PUTIH) */
-.navbar-dark .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--bg);
+  color: var(--teks);
+  line-height: 1.7;
+  font-size: 15px;
+  overflow-x: hidden;
 }
 
-/* Saat navbar scroll (HITAM) */
-.navbar-custom.scrolled .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,0,0,1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+/* ══════════════════════════════
+   NAVBAR
+══════════════════════════════ */
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5vw; height: 68px;
+  background: rgba(255,255,255,0);
+  backdrop-filter: blur(0px);
+  transition: background .35s, backdrop-filter .35s, border-color .35s;
+  border-bottom: 1px solid transparent;
+}
+.navbar.scrolled {
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(14px);
+  border-bottom-color: var(--border);
+}
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.brand img { height: 38px; }
+.brand-text { font-size: 13px; font-weight: 700; color: #fff; line-height: 1.2; max-width: 180px; transition: color .35s; }
+.navbar.scrolled .brand-text { color: var(--hijau); }
+
+.nav-links { display: flex; align-items: center; gap: 4px; }
+.nav-links a {
+  text-decoration: none; color: rgba(255,255,255,.85); font-size: 14px; font-weight: 500;
+  padding: 6px 14px; border-radius: 100px; transition: all .2s;
+}
+.navbar.scrolled .nav-links a { color: var(--teks-muted); }
+.nav-links a:hover { color: var(--hijau); background: var(--hijau-muda); }
+.nav-links a.active { color: var(--putih) !important; background: var(--hijau); }
+
+.dropdown { position: relative; }
+.dropdown-menu {
+  display: none; position: absolute; top: calc(100% + 8px); left: 0;
+  background: var(--putih); border: 1px solid var(--border); border-radius: 12px;
+  padding: 6px; min-width: 200px; box-shadow: 0 8px 24px rgba(0,0,0,.1);
+}
+.dropdown:hover .dropdown-menu { display: block; }
+.dropdown-menu a {
+  display: block; padding: 9px 14px; font-size: 13px; color: var(--teks) !important;
+  border-radius: 8px; text-decoration: none; transition: background .15s;
+}
+.dropdown-menu a:hover { background: var(--hijau-muda); color: var(--hijau) !important; }
+
+.nav-toggle { display: none; background: none; border: none; font-size: 22px; color: #fff; cursor: pointer; transition: color .35s; }
+.navbar.scrolled .nav-toggle { color: var(--hijau); }
+
+@media (max-width: 900px) {
+  .nav-links { display: none; flex-direction: column; align-items: stretch;
+    position: absolute; top: 68px; left: 0; right: 0;
+    background: #fff; border-bottom: 1px solid var(--border); padding: 14px 5vw; gap: 2px; }
+  .nav-links.open { display: flex; }
+  .nav-links a { color: var(--teks-muted) !important; }
+  .nav-toggle { display: block; }
+  .dropdown-menu { position: static; box-shadow: none; border: none; background: var(--bg); }
 }
 
-/* ===== HAMBURGER CUSTOM ===== */
-.navbar-toggler {
-  border: none;
-  outline: none;
-}
-
-.hamburger {
-  width: 26px;
-  height: 20px;
-  position: relative;
-  display: inline-block;
-}
-
-.hamburger span {
-  position: absolute;
-  height: 3px;
-  width: 100%;
-  background: #ffffff;
-  border-radius: 3px;
-  left: 0;
-  transition: all 0.35s ease;
-}
-
-/* Posisi garis */
-.hamburger span:nth-child(1) { top: 0; }
-.hamburger span:nth-child(2) { top: 8px; }
-.hamburger span:nth-child(3) { top: 16px; }
-
-/* ===== SAAT AKTIF (MENJADI X) ===== */
-.navbar-toggler[aria-expanded="true"] .hamburger span:nth-child(1) {
-  transform: rotate(45deg);
-  top: 8px;
-}
-
-.navbar-toggler[aria-expanded="true"] .hamburger span:nth-child(2) {
-  opacity: 0;
-}
-
-.navbar-toggler[aria-expanded="true"] .hamburger span:nth-child(3) {
-  transform: rotate(-45deg);
-  top: 8px;
-}
-
-/* ===== SAAT SCROLL (HITAM) ===== */
-.navbar-custom.scrolled .hamburger span {
-  background: #000000;
-}
-
-
-
-/* BACKGROUND MENU MOBILE (saat hamburger dibuka) */
-@media (max-width: 991.98px) {
-  .navbar-custom .navbar-collapse {
-    background: #ffffff;
-    padding: 15px 20px;
-    border-radius: 12px;
-    margin-top: 10px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-  }
-
-  /* Warna teks menu mobile */
-  .navbar-custom .nav-link {
-    color: #000 !important;
-    margin: 10px 0;
-    font-weight: 600;
-  }
-
-  /* Dropdown menu ikut rapi */
-  .navbar-custom .dropdown-menu {
-    background: #f8fafc;
-    border: none;
-    box-shadow: none;
-  }
-}
-@media (max-width: 991.98px) {
-  .navbar-collapse {
-    animation: fadeDown .35s ease;
-  }
-
-  @keyframes fadeDown {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-}
-
-/* ===== HOVER & ACTIVE MENU NAVBAR ===== */
-.navbar-custom .nav-link {
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-/* Hover efek (desktop & mobile) */
-.navbar-custom .nav-link:hover {
-  color: #e7b022 !important; /* emas */
-}
-
-/* Garis bawah animasi */
-.navbar-custom .nav-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0;
-  height: 2px;
-  background: #e7b022;
-  transition: width 0.3s ease;
-}
-
-/* ===== UNDERLINE NAVBAR (AMAN) ===== */
-.navbar-custom .nav-link::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0;
-  height: 2px;
-  background: #e7b022;
-  transition: width 0.3s ease;
-}
-
-.navbar-custom .nav-link:hover::before {
-  width: 100%;
-}
-/* ===== UNDERLINE NAVBAR (AMAN) ===== */
-.navbar-custom .nav-link::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0;
-  height: 2px;
-  background: #e7b022;
-  transition: width 0.3s ease;
-}
-
-.navbar-custom .nav-link:hover::before {
-  width: 100%;
-}
-/* ===== PANAH DROPDOWN FIX ===== */
-.navbar-custom .dropdown-toggle::after {
-  display: inline-block;
-  margin-left: 6px;
-  vertical-align: middle;
-  position: relative;
-  top: -1px;
-}
-
-
-/* ===== MOBILE MODE ===== */
-@media (max-width: 991.98px) {
-  .navbar-custom .nav-link {
-    padding: 10px 12px;
-    border-radius: 8px;
-  }
-
-  /* Hover mobile background */
-  .navbar-custom .nav-link:hover {
-     background: rgba(210, 232, 12, 0.1);
-    color: #096631 !important;
-  }
-
-  .navbar-custom .nav-link::after {
-    display: none; /* garis bawah tidak perlu di mobile */
-  }
-}
-
-/* ===== MENU AKTIF (halaman sedang dibuka) ===== */
-.navbar-custom .nav-link.active {
-  color: #f0ac00 !important;
-  font-weight: 700;
-}
-    /* ===== JARAK LOGO NAVBAR DI MOBILE ===== */
-@media (max-width: 991.98px) {
-  .navbar-custom .container {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-}
-    /* ===== FIX NAVBAR MOBILE TANPA UBAH HTML ===== */
-@media (max-width: 991.98px) {
-
-  /* container navbar */
-  .navbar-custom .container {
-    display: flex;
-    align-items: center;
-  }
-
-  /* brand */
-  .navbar-brand {
-    display: flex;
-    align-items: center;
-    line-height: 1.2;
-    max-width: calc(100% - 50px); /* sisakan ruang hamburger */
-  }
-
-  .navbar-brand img {
-    height: 38px;
-    margin-right: 8px;
-    flex-shrink: 0;
-  }
-
-  .navbar-brand {
-    font-size: 14px;
-    white-space: normal; /* boleh turun baris kalau sempit */
-  }
-
-  /* tombol hamburger */
-  .navbar-toggler {
-    margin-left: auto;
-    padding: 4px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
-/* ===== BRAND TEXT NAVBAR MOBILE ===== */
-@media (max-width: 991.98px) {
-  .navbar-brand {
-    font-size: 14px;      /* perkecil sedikit */
-    font-weight: 700;     /* bold */
-    line-height: 1.2;     /* biar rapi kalau turun baris */
-  }
-}
-/* ===== BANNER TITLE MOBILE ===== */
-@media (max-width: 575.98px) {
-  .header-banner h1 {
-    font-size: 2rem;
-    text-align: center;
-    padding: 0 20px;   /* supaya tidak nempel pinggir */
-    line-height: 1.3;
-  }
-}
-/* ===== FILTER BUTTON MOBILE ===== */
-@media (max-width: 575.98px) {
-  .filter-btn {
-    margin-bottom: 10px;
-    margin-right: 6px;
-    padding: 8px 14px;
-    font-size: 0.9rem;
-    border-radius: 20px;
-  }
-
-  /* Biar tombol otomatis turun ke bawah */
-  .filter-btn {
-    display: inline-block;
-  }
-}
-/* ===== GALERI MOBILE RAPI ===== */
-@media (max-width: 575.98px) {
-  .gallery-img {
-    height: 200px;
-    border-radius: 14px;
-  }
-
-  .gallery-item {
-    margin-bottom: 18px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-  }
-}
-@media (max-width: 575.98px) {
-  .gallery-container > div {
-    width: 100%;
-  }
-}
-
-    /* ===== HEADER BANNER ===== */
-    .header-banner {
-      height: 60vh;
-      background: url("Img/banner3.jpg") center 60% / cover no-repeat;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #fff;
-    }
-    .header-banner::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.55);
-    }
-    .header-banner h1 {
-      position: relative;
-      z-index: 2;
-      font-size: 3rem;
-      font-weight: 700;
-    }
-    /* ===== GRID GALERI ===== */
-    .gallery-img {
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
-      border-radius: 12px;
-      transition: 0.3s ease;
-    }
-
-    .gallery-item:hover .gallery-img {
-      transform: scale(1.1);
-    }
-    .gallery-item {
-  flex: 1 1 calc(33.333% - 16px); /* 3 gambar per baris dengan gap */
-  border-radius: 12px;
+/* ══════════════════════════════
+   PAGE HERO
+══════════════════════════════ */
+.page-hero {
+  position: relative; min-height: 62vh;
+  display: flex; align-items: flex-end;
+  background: linear-gradient(160deg, var(--hijau-tua) 0%, var(--hijau) 55%, #0d7a56 100%);
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.page-hero-bg {
+  position: absolute; inset: 0;
+  background: url('Img/banner3.jpg') center/cover no-repeat;
+  opacity: .2;
+}
+.page-hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(4,46,30,.65) 0%, rgba(6,95,70,.45) 55%, rgba(4,46,30,.92) 100%);
+}
+.page-hero-pattern {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image: radial-gradient(circle, rgba(183,136,44,.18) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
+}
+.page-hero-khat {
+  position: absolute; right: -20px; top: 50%; transform: translateY(-50%);
+  font-family: 'Scheherazade New', serif;
+  font-size: clamp(160px, 24vw, 340px);
+  color: rgba(183,136,44,.07); line-height: 1; pointer-events: none; user-select: none;
+}
+.page-hero-content {
+  position: relative; z-index: 2;
+  padding: 130px 5vw 0;
+  max-width: 1100px; width: 100%; margin: 0 auto;
+}
+.page-hero-eyebrow {
+  display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--emas-terang); background: rgba(183,136,44,.15); border: 1px solid rgba(183,136,44,.35);
+  padding: 4px 16px; border-radius: 100px; margin-bottom: 18px;
+  animation: fadeDown .7s ease both;
+}
+.page-hero h1 {
+  font-family: 'Amiri', serif;
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-weight: 700; color: #fff; line-height: 1.15;
+  text-shadow: 0 4px 24px rgba(0,0,0,.5);
+  animation: fadeDown .7s .1s ease both;
+  margin-bottom: 14px;
+}
+.page-hero-sub {
+  font-size: 15px; color: rgba(255,255,255,.65);
+  animation: fadeDown .7s .2s ease both;
+  margin-bottom: 36px;
+}
+.hero-wave { position: relative; z-index: 2; line-height: 0; }
+.hero-wave svg { display: block; width: 100%; }
+
+/* Breadcrumb */
+.breadcrumb-bar { background: var(--putih); border-bottom: 1px solid var(--border); padding: 12px 5vw; }
+.breadcrumb-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13px; color: var(--teks-muted);
+}
+.breadcrumb-inner a { color: var(--hijau); text-decoration: none; font-weight: 600; }
+.breadcrumb-inner a:hover { color: var(--emas); }
+.breadcrumb-inner i { font-size: 10px; color: var(--border); }
+
+/* ══════════════════════════════
+   GALERI SECTION
+══════════════════════════════ */
+.galeri-section { background: var(--putih); }
+.section-wrap { max-width: 1140px; margin: 0 auto; padding: 80px 5vw; }
+.section-header { text-align: center; margin-bottom: 52px; }
+.section-eyebrow {
+  display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase;
+  color: var(--emas); background: var(--emas-muda); border: 1px solid rgba(183,136,44,.3);
+  padding: 4px 16px; border-radius: 100px; margin-bottom: 14px;
+}
+.section-title {
+  font-family: 'Amiri', serif; font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700;
+  color: var(--hijau); margin-bottom: 10px;
+}
+.section-divider {
+  width: 60px; height: 3px; background: linear-gradient(90deg, var(--emas), var(--emas-terang));
+  border-radius: 10px; margin: 0 auto 16px;
+}
+.section-desc { font-size: 15px; color: var(--teks-muted); max-width: 560px; margin: 0 auto; }
+
+/* ── Filter Pills ── */
+.filter-wrap {
+  display: flex; justify-content: center; gap: 8px;
+  flex-wrap: wrap; margin-bottom: 48px;
+}
+.filter-btn {
+  display: flex; align-items: center; gap: 7px;
+  background: var(--bg); border: 1.5px solid var(--border);
+  border-radius: 100px; padding: 9px 20px;
+  font-size: 13px; font-weight: 600; color: var(--teks-muted);
+  cursor: pointer; transition: all .22s;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.filter-btn i { font-size: 13px; }
+.filter-btn:hover { color: var(--hijau); border-color: var(--hijau); background: var(--hijau-muda); }
+.filter-btn.active {
+  background: var(--hijau); color: #fff; border-color: var(--hijau);
+  box-shadow: 0 6px 20px rgba(6,95,70,.3);
+}
+
+/* ── Masonry-style Grid ── */
+.gallery-grid {
+  columns: 3 280px;
+  column-gap: 18px;
+}
+@media (max-width: 640px) { .gallery-grid { columns: 2 160px; column-gap: 12px; } }
+@media (max-width: 400px) { .gallery-grid { columns: 1; } }
+
+.gallery-item {
+  break-inside: avoid;
+  margin-bottom: 18px;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
   cursor: pointer;
-  transition: transform 0.3s ease;
-  margin-bottom: 16px; /* <-- ini tambahan jarak vertikal */
+  display: block;
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+.gallery-item.hidden {
+  display: none;
+}
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 48px rgba(4,46,30,.22);
+}
+.gallery-item img {
+  width: 100%; display: block;
+  transition: transform .55s ease;
+}
+.gallery-item:hover img { transform: scale(1.07); }
+
+.gallery-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(4,46,30,.78) 0%, transparent 55%);
+  display: flex; align-items: flex-end; padding: 18px;
+  opacity: 0; transition: opacity .3s;
+}
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+.gallery-caption {
+  color: #fff; font-size: 13px; font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+}
+.gallery-caption i { font-size: 16px; color: var(--emas-terang); }
+
+/* ── Count badge ── */
+.gallery-count {
+  position: absolute; top: 14px; right: 14px;
+  background: rgba(4,46,30,.7); backdrop-filter: blur(6px);
+  color: #fff; font-size: 11px; font-weight: 700;
+  padding: 3px 10px; border-radius: 100px;
+  border: 1px solid rgba(255,255,255,.15);
+  opacity: 0; transition: opacity .3s;
+}
+.gallery-item:hover .gallery-count { opacity: 1; }
+
+/* ── CTA Instagram ── */
+.ig-cta {
+  margin-top: 56px; text-align: center;
+}
+.btn-emas {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--emas-terang); color: #0c1a14; font-weight: 700; font-size: 14px;
+  padding: 14px 30px; border-radius: 100px; text-decoration: none;
+  transition: all .25s; border: none; cursor: pointer;
+}
+.btn-emas:hover { background: #f0c240; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(231,176,34,.4); }
+.btn-outline-green {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent; color: var(--hijau); font-weight: 700; font-size: 14px;
+  padding: 14px 30px; border-radius: 100px; text-decoration: none;
+  border: 1.5px solid var(--hijau); transition: all .25s; margin-left: 12px;
+}
+.btn-outline-green:hover { background: var(--hijau-muda); }
+
+/* ══════════════════════════════
+   LIGHTBOX
+══════════════════════════════ */
+.lightbox {
+  position: fixed; inset: 0; z-index: 999;
+  background: rgba(4,18,12,.95); backdrop-filter: blur(16px);
+  display: none; align-items: center; justify-content: center;
+  padding: 20px;
+}
+.lightbox.open { display: flex; animation: lbIn .25s ease; }
+@keyframes lbIn { from{opacity:0;transform:scale(.96)} to{opacity:1;transform:none} }
+
+.lb-inner {
+  position: relative; max-width: 900px; width: 100%;
+  display: flex; flex-direction: column; align-items: center; gap: 16px;
+}
+.lb-img-wrap {
+  width: 100%; border-radius: 20px; overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0,0,0,.6);
+}
+.lb-img-wrap img {
+  width: 100%; max-height: 76vh; object-fit: contain;
+  display: block; background: #000;
+}
+.lb-caption {
+  color: rgba(255,255,255,.75); font-size: 14px; font-weight: 500; text-align: center;
+}
+.lb-close {
+  position: fixed; top: 20px; right: 24px;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2);
+  color: #fff; font-size: 20px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .2s;
+}
+.lb-close:hover { background: rgba(255,255,255,.2); }
+.lb-nav {
+  position: fixed; top: 50%; transform: translateY(-50%);
+  width: 48px; height: 48px; border-radius: 50%;
+  background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2);
+  color: #fff; font-size: 20px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .2s;
+}
+.lb-nav:hover { background: rgba(255,255,255,.2); }
+.lb-prev { left: 16px; }
+.lb-next { right: 16px; }
+@media (max-width: 600px) {
+  .lb-prev { left: 8px; } .lb-next { right: 8px; }
+  .lb-nav { width: 38px; height: 38px; font-size: 16px; }
 }
 
-    /* ===== FOOTER ===== */
-    footer {
-      background-color: #001f3f;
-      color: white;
-    }
-    /* ===== Filter Button Active Style ===== */
-    .filter-btn.active {
-      background-color: #e7b022;
-      color: #000 !important;
-      border-color: #e7b022 !important;
-    }
-
-/* ===== GALERI HP: 1 GAMBAR PER BARIS ===== */
-@media (max-width: 575.98px) {
-  .gallery-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
+/* ══════════════════════════════
+   FOOTER
+══════════════════════════════ */
+footer {
+  background: var(--gelap); color: rgba(255,255,255,.55);
+  padding: 64px 5vw 32px;
 }
+.footer-grid {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 48px; margin-bottom: 48px;
+}
+@media (max-width: 820px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
 
-  </style>
+.footer-brand-name { font-family: 'Amiri', serif; font-size: 22px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.footer-arab { font-family: 'Scheherazade New', serif; font-size: 1.1rem; color: var(--emas); margin-bottom: 12px; }
+footer p { font-size: 14px; line-height: 1.9; }
+footer h5 { font-size: 13px; font-weight: 700; color: #fff; letter-spacing: .07em; text-transform: uppercase; margin-bottom: 18px; }
+footer a { font-size: 14px; color: rgba(255,255,255,.5); text-decoration: none; display: block; margin-bottom: 8px; transition: color .2s; }
+footer a:hover { color: var(--emas-terang); }
+footer a i { margin-right: 8px; }
+.footer-divider { border: none; border-top: 1px solid rgba(255,255,255,.08); max-width: 1100px; margin: 0 auto 24px; }
+.footer-copy { text-align: center; font-size: 13px; color: rgba(255,255,255,.25); max-width: 1100px; margin: 0 auto; }
+
+/* ══════════════════════════════
+   ANIMATIONS
+══════════════════════════════ */
+.fade-up { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
+.fade-up.visible { opacity: 1; transform: none; }
+
+@keyframes fadeDown { from{opacity:0;transform:translateY(-20px)} to{opacity:1;transform:none} }
+
+/* item appear animation after filter */
+@keyframes itemPop {
+  from { opacity: 0; transform: scale(.94) translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
+.gallery-item.appear { animation: itemPop .38s ease both; }
+</style>
 </head>
-<div class="custom-cursor" id="cursor"></div>
-<div class="cursor-glow" id="cursorGlow"></div>
 <body>
- <!-- ===== NAVBAR ===== -->
-<nav class="navbar navbar-expand-lg fixed-top navbar-custom navbar-dark">
-  <div class="container">
-    <a class="navbar-brand d-flex align-items-center" href="index.html">
-      <img src="Img/logoitb.png" style="height:40px; margin-right:10px" />
-      PONPES ITTIHADUT THOLIBIN
-    </a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBar">
-  <span class="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </span>
-</button>
-
-    <div class="collapse navbar-collapse" id="navBar">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">Home</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="profil.html">Profil</a>
-        </li>
-
-        <!-- DROPDOWN PENDAFTARAN -->
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Pendaftaran
-          </a>
-          <ul class="dropdown-menu">
-            <li>
-              <a class="dropdown-item" href="pendaftaran.html">
-                Pendaftaran Pondok
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="https://mtsalhikmahwsb.com/psb.html">
-                Pendaftaran MTS
-              </a>
-            </li>
-          </ul>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="seputar.html">Seputar MTS</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link active" href="galeri.html">Galeri</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="hubungi.html">Hubungi</a>
-        </li>
-      </ul>
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <a class="brand" href="index.html">
+    <img src="Img/logoitb.png" alt="Logo ITB">
+    <span class="brand-text">PP. Ittihadut Tholibin</span>
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="profil.html">Profil</a>
+    <div class="dropdown">
+      <a href="#" style="display:flex;align-items:center;gap:5px;">
+        Pendaftaran <i class="bi bi-chevron-down" style="font-size:11px;"></i>
+      </a>
+      <div class="dropdown-menu">
+        <a href="pendaftaran.html">Pendaftaran Pondok</a>
+        <a href="https://mtsalhikmahwsb.com/psb.html">Pendaftaran MTS</a>
+      </div>
     </div>
+    <a href="kegiatan.html">Kegiatan</a>
+    <a href="seputar.html">Seputar MTS</a>
+    <a href="galeri.html" class="active">Galeri</a>
+    <a href="hubungi.html">Hubungi</a>
   </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><i class="bi bi-list"></i></button>
 </nav>
 
+<!-- ══════ PAGE HERO ══════ -->
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-pattern"></div>
+  <div class="page-hero-khat">صور</div>
 
-  <!-- Jeda untuk navbar fixed -->
-  <div style="height: 0px"></div>
-
-  <!-- ===== HEADER ===== -->
-  <section class="header-banner">
-    <h1>Galeri Pondok Pesantren</h1>
-  </section>
-
-  <!-- ===== CONTENT ===== -->
- <div class="container py-5">
-  <h2 class="fw-bold text-success">Dokumentasi Pondok</h2>
-  <div style="width: 100px; height: 4px; background: #e7b022; border-radius: 10px; margin-bottom: 30px;"></div>
-
-  <!-- Filter -->
-  <div class="mb-4">
-    <button class="btn btn-outline-success me-2 filter-btn active" data-filter="all">Semua</button>
-    <button class="btn btn-outline-success me-2 filter-btn" data-filter="harian">Kegiatan Harian</button>
-    <button class="btn btn-outline-success me-2 filter-btn" data-filter="acara">Acara Besar</button>
-    <button class="btn btn-outline-success me-2 filter-btn" data-filter="santri">Santri Baru</button>
-    <button class="btn btn-outline-success me-2 filter-btn" data-filter="pendidikan">Kegiatan Pendidikan</button>
-    <button class="btn btn-outline-success me-2 filter-btn" data-filter="ziarah">Ziarah</button>
+  <div class="page-hero-content">
+    <div class="page-hero-eyebrow">Dokumentasi · Kegiatan Pondok</div>
+    <h1>Galeri<br>Kegiatan</h1>
+    <p class="page-hero-sub">Momen-momen berharga perjalanan santri dan kehidupan di PP. Ittihadut Tholibin</p>
   </div>
 
-  <div class="row g-4 gallery-container">
-
-    <!-- Kegiatan Harian -->
-    <div class="col-lg-4 col-md-6 gallery-item" data-category="harian">
-      <img src="Img/harian1.jpg" class="gallery-img" alt="Kegiatan Harian" />
-    </div>
-    <div class="col-lg-4 col-md-6 gallery-item" data-category="harian">
-      <img src="Img/harian2.jpg" class="gallery-img" alt="Kegiatan Harian" />
-    </div>
-    <div class="col-lg-4 col-md-6 gallery-item" data-category="harian">
-      <img src="Img/harian4.jpg" class="gallery-img" alt="Kegiatan Harian" />
-    </div>
-
-    <!-- Acara Besar -->
-    <div class="col-lg-4 col-md-6 gallery-item" data-category="acara">
-      <img src="Img/hkq.jpg" class="gallery-img" alt="Acara Besar" />
-    </div>
-    <div class="col-lg-4 col-md-6 gallery-item" data-category="acara">
-      <img src="Img/baner2.jpg" class="gallery-img" alt="Acara Besar" />
-    </div>
-    <div class="col-lg-4 col-md-6 gallery-item" data-category="acara">
-      <img src="Img/harian3.jpg" class="gallery-img" alt="Acara Besar" />
-    </div>
-
-    <!-- Santri Baru -->
-    <div class="col-lg-4 col-md-6 gallery-item" data-category="santri">
-      <img src="Img/santribaru2.jpg" class="gallery-img" alt="Santri Baru" />
-    </div>
-    <div class="col-lg-4 col-md-6 gallery-item" data-category="santri">
-      <img src="Img/santribaru1.jpg" class="gallery-img" alt="Santri Baru" />
-    </div>
-    <div class="col-lg-4 col-md-6 gallery-item" data-category="santri">
-      <img src="Img/santribaru3.jpg" class="gallery-img" alt="Santri Baru" />
-    </div>
-
-    <!-- Kegiatan Pendidikan -->
-    <div class="col-lg-4 col-md-6 gallery-item" data-category="pendidikan">
-      <img src="Img/pendidikan1.jpg" class="gallery-img" alt="Kegiatan Pendidikan" />
-    </div>
-    <div class="col-lg-4 col-md-6 gallery-item" data-category="pendidikan">
-      <img src="Img/pendidikan2.jpg" class="gallery-img" alt="Kegiatan Pendidikan" />
-    </div>
-    <div class="col-lg-4 col-md-6 gallery-item" data-category="pendidikan">
-      <img src="Img/pendidikan3.jpg" class="gallery-img" alt="Kegiatan Pendidikan" />
-    </div>
-
-    <!-- Ziarah -->
-    <div class="col-lg-4 col-md-6 gallery-item" data-category="ziarah">
-      <img src="Img/hbi1.jpg" class="gallery-img" alt="Ziarah" />
-    </div>
-    <div class="col-lg-4 col-md-6 gallery-item" data-category="ziarah">
-      <img src="Img/ziaroh2.jpg" class="gallery-img" alt="Ziarah" />
-    </div>
-    <div class="col-lg-4 col-md-6 gallery-item" data-category="ziarah">
-      <img src="Img/banner3.jpg" class="gallery-img" alt="Ziarah" />
-    </div>
-
+  <div class="hero-wave" style="width:100%;">
+    <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#ffffff"/>
+    </svg>
   </div>
+</section>
 
-  <!-- Tombol Lihat Selengkapnya -->
-  <div class="text-center mt-5">
-    <a href="https://www.instagram.com/ponpes_ittihadut_tholibin" 
-       target="_blank"
-       class="btn btn-success btn-lg px-4">
-      Lihat Selengkapnya di Instagram <i class="bi bi-instagram"></i>
-    </a>
+<!-- Breadcrumb -->
+<div class="breadcrumb-bar">
+  <div class="breadcrumb-inner">
+    <a href="index.html"><i class="bi bi-house-fill"></i> Beranda</a>
+    <i class="bi bi-chevron-right"></i>
+    <span>Galeri</span>
   </div>
 </div>
 
+<!-- ══════ GALERI ══════ -->
+<section class="galeri-section">
+  <div class="section-wrap">
 
-  <!-- ===== FOOTER ===== -->
-  <footer>
-    <div class="container py-4">
-      <div class="row">
-        <div class="col-md-4 mb-4">
-          <h5 class="fw-bold text-light">PP. Ittihadut Tholibin</h5>
-          <p class="text-light">
-            RT.2/RW.5, Kradenan, Kalibeber, Mojotengah,<br />
-            Wonosobo, Jawa Tengah 56351
-          </p>
-        </div>
-        <div class="col-md-4 mb-4">
-          <h5 class="fw-bold text-light">Link Cepat</h5>
-          <ul class="list-unstyled">
-            <li><a href="pendaftaran.html" class="text-light">Pendaftaran</a></li>
-            <li><a href="seputar.html" class="text-light">Seputar MTS</a></li>
-            <li><a href="hubungi.html" class="text-light">Hubungi Kami</a></li>
-          </ul>
-        </div>
-        <div class="col-md-4 mb-4">
-          <h5 class="fw-bold text-light">Media Sosial</h5>
-          <a href="https://wa.me/6282241186388" class="d-block mb-2 text-light"
-            ><i class="bi bi-whatsapp"></i> WhatsApp</a
-          >
-          <a href="https://www.instagram.com/ponpes_ittihadut_tholibin?igsh=d3llbTBxdzZzdWNm" class="d-block mb-2 text-light"
-            ><i class="bi bi-instagram"></i> Instagram</a
-          >
-          <a href="mailto:info@ponpesittihaduttholibin.com" class="d-block mb-2 text-light"
-            ><i class="bi bi-envelope-fill"></i> Email</a
-          >
-          <a href="https://youtube.com/@ittihaduttholibin7931?si=sqPslEjSlKg5Lk9j" class="d-block text-light"><i class="bi bi-youtube"></i> YouTube</a>
-        </div>
-      </div>
-      <div class="text-center mt-3 pt-3 border-top border-light">
-        <p class="mb-0">© 2025 PP. Ittihadut Tholibin | Tim IT Markas Media</p>
-      </div>
+    <div class="section-header fade-up">
+      <div class="section-eyebrow">Dokumentasi Pondok</div>
+      <h2 class="section-title">Galeri Kegiatan</h2>
+      <div class="section-divider"></div>
+      <p class="section-desc">Abadikan setiap momen bersama — dari kegiatan harian hingga acara-acara istimewa pesantren</p>
     </div>
-  </footer>
 
-  <script>
-    window.addEventListener("scroll", function () {
-      const navbar = document.querySelector(".navbar-custom");
-      if (window.scrollY > 10) navbar.classList.add("scrolled");
-      else navbar.classList.remove("scrolled");
-    });
+    <!-- Filter -->
+    <div class="filter-wrap fade-up">
+      <button class="filter-btn active" data-filter="all"><i class="bi bi-grid-3x3-gap-fill"></i> Semua</button>
+      <button class="filter-btn" data-filter="harian"><i class="bi bi-sun-fill"></i> Kegiatan Harian</button>
+      <button class="filter-btn" data-filter="acara"><i class="bi bi-star-fill"></i> Acara Besar</button>
+      <button class="filter-btn" data-filter="santri"><i class="bi bi-people-fill"></i> Santri Baru</button>
+      <button class="filter-btn" data-filter="pendidikan"><i class="bi bi-book-fill"></i> Pendidikan</button>
+      <button class="filter-btn" data-filter="ziarah"><i class="bi bi-geo-alt-fill"></i> Ziarah</button>
+    </div>
 
-    // Script filter kategori galeri
-    const filterButtons = document.querySelectorAll(".filter-btn");
-    const galleryItems = document.querySelectorAll(".gallery-item[data-category]");
+    <!-- Gallery Grid -->
+    <div class="gallery-grid" id="galleryGrid">
 
-    filterButtons.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        // Hilangkan active di semua tombol
-        filterButtons.forEach((b) => b.classList.remove("active"));
-        // Tambahkan active ke tombol klik
-        btn.classList.add("active");
+      <!-- Kegiatan Harian -->
+      <div class="gallery-item" data-category="harian" data-caption="Kegiatan Harian Santri">
+        <img src="Img/harian1.jpg" alt="Kegiatan Harian" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-caption"><i class="bi bi-zoom-in"></i> Kegiatan Harian Santri</div>
+        </div>
+        <div class="gallery-count"><i class="bi bi-eye"></i></div>
+      </div>
 
-        const filter = btn.getAttribute("data-filter");
+      <div class="gallery-item" data-category="harian" data-caption="Sima'an Al-Qur'an">
+        <img src="Img/harian2.jpg" alt="Sima'an" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-caption"><i class="bi bi-zoom-in"></i> Sima'an Al-Qur'an</div>
+        </div>
+        <div class="gallery-count"><i class="bi bi-eye"></i></div>
+      </div>
 
-        galleryItems.forEach((item) => {
-          if (filter === "all") {
-            item.style.display = "block";
-          } else {
-            if (item.getAttribute("data-category") === filter) {
-              item.style.display = "block";
-            } else {
-              item.style.display = "none";
-            }
-          }
-        });
-      });
-    });
+      <div class="gallery-item" data-category="harian" data-caption="Kegiatan Harian Pondok">
+        <img src="Img/harian4.jpg" alt="Kegiatan Harian" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-caption"><i class="bi bi-zoom-in"></i> Kegiatan Harian Pondok</div>
+        </div>
+        <div class="gallery-count"><i class="bi bi-eye"></i></div>
+      </div>
 
-    document.addEventListener("mousemove", (e) => {
-    const cursor = document.getElementById("cursor");
-    const glow = document.getElementById("cursorGlow");
+      <!-- Acara Besar -->
+      <div class="gallery-item" data-category="acara" data-caption="HKQ — Haflah Khotmil Qur'an">
+        <img src="Img/hkq.jpg" alt="HKQ" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-caption"><i class="bi bi-zoom-in"></i> HKQ — Haflah Khotmil Qur'an</div>
+        </div>
+        <div class="gallery-count"><i class="bi bi-eye"></i></div>
+      </div>
 
-    cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-    glow.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+      <div class="gallery-item" data-category="acara" data-caption="HKQ Ke-16">
+        <img src="Img/baner1.jpg" alt="HKQ Ke-16" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-caption"><i class="bi bi-zoom-in"></i> HKQ Ke-16</div>
+        </div>
+        <div class="gallery-count"><i class="bi bi-eye"></i></div>
+      </div>
+
+      <div class="gallery-item" data-category="acara" data-caption="Acara Besar Pondok">
+        <img src="Img/harian3.jpg" alt="Acara Besar" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-caption"><i class="bi bi-zoom-in"></i> Acara Besar Pondok</div>
+        </div>
+        <div class="gallery-count"><i class="bi bi-eye"></i></div>
+      </div>
+
+      <!-- Santri Baru -->
+      <div class="gallery-item" data-category="santri" data-caption="Penerimaan Santri Baru">
+        <img src="Img/santribaru1.jpg" alt="Santri Baru" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-caption"><i class="bi bi-zoom-in"></i> Penerimaan Santri Baru</div>
+        </div>
+        <div class="gallery-count"><i class="bi bi-eye"></i></div>
+      </div>
+
+      <div class="gallery-item" data-category="santri" data-caption="Acara Santri Baru">
+        <img src="Img/santribaru2.jpg" alt="Santri Baru" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-caption"><i class="bi bi-zoom-in"></i> Acara Santri Baru</div>
+        </div>
+        <div class="gallery-count"><i class="bi bi-eye"></i></div>
+      </div>
+
+      <div class="gallery-item" data-category="santri" data-caption="Momen Santri Baru">
+        <img src="Img/santribaru3.jpg" alt="Santri Baru" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-caption"><i class="bi bi-zoom-in"></i> Momen Santri Baru</div>
+        </div>
+        <div class="gallery-count"><i class="bi bi-eye"></i></div>
+      </div>
+
+      <!-- Pendidikan -->
+      <div class="gallery-item" data-category="pendidikan" data-caption="Kegiatan Pendidikan">
+        <img src="Img/pendidikan1.JPG" alt="Pendidikan" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-caption"><i class="bi bi-zoom-in"></i> Kegiatan Pendidikan</div>
+        </div>
+        <div class="gallery-count"><i class="bi bi-eye"></i></div>
+      </div>
+
+      <div class="gallery-item" data-category="pendidikan" data-caption="Pembelajaran di Kelas">
+        <img src="Img/pendidikan2.JPG" alt="Pendidikan" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-caption"><i class="bi bi-zoom-in"></i> Pembelajaran di Kelas</div>
+        </div>
+        <div class="gallery-count"><i class="bi bi-eye"></i></div>
+      </div>
+
+      <div class="gallery-item" data-category="pendidikan" data-caption="Madrasah Diniyah">
+        <img src="Img/pendidikan3.JPG" alt="Pendidikan" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-caption"><i class="bi bi-zoom-in"></i> Madrasah Diniyah</div>
+        </div>
+        <div class="gallery-count"><i class="bi bi-eye"></i></div>
+      </div>
+
+      <!-- Ziarah -->
+      <div class="gallery-item" data-category="ziarah" data-caption="Ziarah Akbar">
+        <img src="Img/hbi1.jpg" alt="Ziarah" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-caption"><i class="bi bi-zoom-in"></i> Ziarah Akbar</div>
+        </div>
+        <div class="gallery-count"><i class="bi bi-eye"></i></div>
+      </div>
+
+      <div class="gallery-item" data-category="ziarah" data-caption="Ziarah Rutin Santri">
+        <img src="Img/ziaroh2.JPG" alt="Ziarah" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-caption"><i class="bi bi-zoom-in"></i> Ziarah Rutin Santri</div>
+        </div>
+        <div class="gallery-count"><i class="bi bi-eye"></i></div>
+      </div>
+
+      <div class="gallery-item" data-category="ziarah" data-caption="Kegiatan Ziarah">
+        <img src="Img/banner3.jpg" alt="Ziarah" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-caption"><i class="bi bi-zoom-in"></i> Kegiatan Ziarah</div>
+        </div>
+        <div class="gallery-count"><i class="bi bi-eye"></i></div>
+      </div>
+
+    </div><!-- /gallery-grid -->
+
+    <!-- Instagram CTA -->
+    <div class="ig-cta fade-up">
+      <a href="https://www.instagram.com/ponpes_ittihadut_tholibin" target="_blank" class="btn-emas">
+        <i class="bi bi-instagram"></i> Lihat Lebih Banyak di Instagram
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════ FOOTER ══════ -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-name">PP. Ittihadut Tholibin</div>
+      <div class="footer-arab">إتحاد الطالبين</div>
+      <p>RT.2/RW.5, Kradenan, Kalibeber,<br>Kec. Mojotengah, Kabupaten Wonosobo,<br>Jawa Tengah 56351</p>
+    </div>
+    <div>
+      <h5>Link Cepat</h5>
+      <a href="index.html">Beranda</a>
+      <a href="profil.html">Profil</a>
+      <a href="pendaftaran.html">Pendaftaran</a>
+      <a href="seputar.html">Seputar MTS</a>
+      <a href="galeri.html">Galeri</a>
+      <a href="hubungi.html">Hubungi</a>
+    </div>
+    <div>
+      <h5>Media Sosial</h5>
+      <a href="https://wa.me/6287843563709" target="_blank"><i class="bi bi-whatsapp"></i>WhatsApp</a>
+      <a href="https://www.instagram.com/ponpes_ittihadut_tholibin" target="_blank"><i class="bi bi-instagram"></i>Instagram</a>
+      <a href="https://youtube.com/@ittihaduttholibin7931" target="_blank"><i class="bi bi-youtube"></i>YouTube</a>
+      <a href="mailto:info@ponpesittihaduttholibin.com"><i class="bi bi-envelope-fill"></i>Email</a>
+    </div>
+  </div>
+  <hr class="footer-divider">
+  <p class="footer-copy">© 2025 PP. Ittihadut Tholibin · Tim IT Markas Media</p>
+</footer>
+
+<!-- ══════ LIGHTBOX ══════ -->
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" id="lbClose"><i class="bi bi-x-lg"></i></button>
+  <button class="lb-nav lb-prev" id="lbPrev"><i class="bi bi-chevron-left"></i></button>
+  <button class="lb-nav lb-next" id="lbNext"><i class="bi bi-chevron-right"></i></button>
+  <div class="lb-inner">
+    <div class="lb-img-wrap">
+      <img id="lbImg" src="" alt="">
+    </div>
+    <div class="lb-caption" id="lbCaption"></div>
+  </div>
+</div>
+
+<!-- ══════ SCRIPTS ══════ -->
+<script>
+/* ── Navbar scroll ── */
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 30);
 });
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+/* ── Mobile toggle ── */
+const navToggle = document.getElementById('navToggle');
+const navLinks  = document.getElementById('navLinks');
+navToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+  navToggle.querySelector('i').className =
+    navLinks.classList.contains('open') ? 'bi bi-x-lg' : 'bi bi-list';
+});
+
+/* ── Fade-up observer ── */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+/* ── Filter ── */
+const filterBtns = document.querySelectorAll('.filter-btn');
+const items = document.querySelectorAll('.gallery-item');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    items.forEach(item => {
+      const match = f === 'all' || item.dataset.category === f;
+      item.classList.toggle('hidden', !match);
+      if (match) {
+        item.classList.remove('appear');
+        void item.offsetWidth; // reflow
+        item.classList.add('appear');
+      }
+    });
+  });
+});
+
+/* ── Lightbox ── */
+const lightbox = document.getElementById('lightbox');
+const lbImg    = document.getElementById('lbImg');
+const lbCap    = document.getElementById('lbCaption');
+let visibleItems = [], currentIdx = 0;
+
+function getVisible() {
+  return [...document.querySelectorAll('.gallery-item:not(.hidden)')];
+}
+
+function openLb(idx) {
+  visibleItems = getVisible();
+  currentIdx = idx;
+  const item = visibleItems[idx];
+  lbImg.src = item.querySelector('img').src;
+  lbCap.textContent = item.dataset.caption || '';
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLb() {
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function navLb(dir) {
+  visibleItems = getVisible();
+  currentIdx = (currentIdx + dir + visibleItems.length) % visibleItems.length;
+  const item = visibleItems[currentIdx];
+  lbImg.style.opacity = '0';
+  setTimeout(() => {
+    lbImg.src = item.querySelector('img').src;
+    lbCap.textContent = item.dataset.caption || '';
+    lbImg.style.opacity = '1';
+  }, 150);
+}
+lbImg.style.transition = 'opacity .15s ease';
+
+items.forEach((item, i) => {
+  item.addEventListener('click', () => {
+    const visible = getVisible();
+    const visIdx = visible.indexOf(item);
+    if (visIdx !== -1) openLb(visIdx);
+  });
+});
+
+document.getElementById('lbClose').addEventListener('click', closeLb);
+document.getElementById('lbPrev').addEventListener('click', () => navLb(-1));
+document.getElementById('lbNext').addEventListener('click', () => navLb(1));
+
+lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLb(); });
+
+document.addEventListener('keydown', e => {
+  if (!lightbox.classList.contains('open')) return;
+  if (e.key === 'Escape') closeLb();
+  if (e.key === 'ArrowLeft') navLb(-1);
+  if (e.key === 'ArrowRight') navLb(1);
+});
+</script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
